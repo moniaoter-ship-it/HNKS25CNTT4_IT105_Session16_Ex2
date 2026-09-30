@@ -1,0 +1,116 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="RvkPnV8rLEpw1sTglrye">
+    <mxGraphModel dx="1880" dy="1708" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart TB\n  T[\&quot;ERD QUẢN LÝ ĐĂNG KÝ KHÓA HỌC EDUSMART\&quot;]\n\n  subgraph ERD[\&quot;MÔ HÌNH ERD\&quot;]\n    HV[\&quot;HOC_VIEN&lt;br/&gt;────────────&lt;br/&gt;🔑 MaHV (PK)&lt;br/&gt;HoTen&lt;br/&gt;NgaySinh\&quot;]\n    DK[\&quot;DANG_KY&lt;br/&gt;────────────&lt;br/&gt;🔑 MaHV (PK, FK)&lt;br/&gt;🔑 MaKH (PK, FK)&lt;br/&gt;DiemSo\&quot;]\n    KH[\&quot;KHOA_HOC&lt;br/&gt;────────────&lt;br/&gt;🔑 MaKH (PK)&lt;br/&gt;TenKH&lt;br/&gt;SoTietHoc\&quot;]\n\n    HV ||--o{ DK\n    KH ||--o{ DK\n  end\n\n  N[\&quot;Quan hệ N-N được chuyển thành&lt;br/&gt;hai quan hệ 1-N qua thực thể trung gian DANG_KY\&quot;]\n\n  subgraph NF[\&quot;RÀ SOÁT CHUẨN HÓA 2NF\&quot;]\n    DRAFT[\&quot;BẢNG NHÁP&lt;br/&gt;&lt;br/&gt;(MaHV, MaKH) là khóa chính ghép&lt;br/&gt;TenKH chỉ phụ thuộc vào MaKH&lt;br/&gt;→ Vi phạm 2NF: phụ thuộc bộ phận&lt;br/&gt;DiemSo phụ thuộc đầy đủ vào (MaHV, MaKH)\&quot;]\n    KH2[\&quot;KHOA_HOC&lt;br/&gt;────────────&lt;br/&gt;🔑 MaKH (PK)&lt;br/&gt;TenKH&lt;br/&gt;SoTietHoc\&quot;]\n    DK2[\&quot;DANG_KY&lt;br/&gt;────────────&lt;br/&gt;🔑 MaHV (PK, FK)&lt;br/&gt;🔑 MaKH (PK, FK)&lt;br/&gt;DiemSo\&quot;]\n    DRAFT -.-&gt;|\&quot;Tách TenKH và SoTietHoc sang KHOA_HOC\&quot;| KH2\n    DRAFT -.-&gt;|\&quot;Giữ thuộc tính phụ thuộc đầy đủ vào khóa ghép\&quot;| DK2\n  end\n\n  R[\&quot;Kết quả đạt 2NF:&lt;br/&gt;mỗi thuộc tính không khóa phụ thuộc đầy đủ&lt;br/&gt;vào toàn bộ khóa chính của bảng.\&quot;]\n\n  T --&gt; ERD\n  ERD --&gt; N\n  N --&gt; NF\n  NF --&gt; R\n\n\n  class T title\n  class HV student\n  class DK,DK2 enrollment\n  class KH,KH2 course\n  class N note\n  class DRAFT warning\n  class R result\n\n  style ERD fill:#f8fbff,stroke:#9dc3e6,stroke-width:2px\n  style NF fill:#fffdf5,stroke:#d6b656,stroke-width:2px\n  linkStyle 0,1 stroke:#4f81bd,stroke-width:2px&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="19">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="MÔ HÌNH ERD" mermaidId="n:ERD" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#f8fbff;strokeColor=#9dc3e6;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="MÔ HÌNH ERD" id="2">
+          <mxCell parent="19" style="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#f8fbff;strokeColor=#9dc3e6;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="558" width="266" x="437" y="112" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="HOC_VIEN&lt;br&gt;────────────&lt;br&gt;&amp;nbsp;MaHV (PK)&lt;br&gt;HoTen&lt;br&gt;NgaySinh" mermaidId="n:HV" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="HOC_VIEN&#xa;────────────&#xa;🔑 MaHV (PK)&#xa;HoTen&#xa;NgaySinh" id="3">
+          <mxCell parent="2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="196" x="35" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="DANG_KY&lt;br&gt;────────────&lt;br&gt;&amp;nbsp;MaHV (PK, FK)&lt;br&gt;&amp;nbsp;MaKH (PK, FK)&lt;br&gt;DiemSo" mermaidId="n:DK" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="DANG_KY&#xa;────────────&#xa;🔑 MaHV (PK, FK)&#xa;🔑 MaKH (PK, FK)&#xa;DiemSo" id="4">
+          <mxCell parent="2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="196" x="35" y="226" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="KHOA_HOC&lt;br&gt;────────────&lt;br&gt;&amp;nbsp;MaKH (PK)&lt;br&gt;TenKH&lt;br&gt;SoTietHoc" mermaidId="n:KH" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="KHOA_HOC&#xa;────────────&#xa;🔑 MaKH (PK)&#xa;TenKH&#xa;SoTietHoc" id="5">
+          <mxCell parent="2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="196" x="35" y="407" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="RÀ SOÁT CHUẨN HÓA 2NF" mermaidId="n:NF" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#fffdf5;strokeColor=#d6b656;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="RÀ SOÁT CHUẨN HÓA 2NF" id="6">
+          <mxCell parent="19" style="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#fffdf5;strokeColor=#d6b656;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="377" width="1123" x="8" y="843" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BẢNG NHÁP&#xa;&#xa;(MaHV, MaKH) là khóa chính ghép&#xa;TenKH chỉ phụ thuộc vào MaKH&#xa;→ Vi phạm 2NF: phụ thuộc bộ phận&#xa;DiemSo phụ thuộc đầy đủ vào (MaHV, MaKH)" mermaidId="n:DRAFT" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="BẢNG NHÁP&#xa;&#xa;(MaHV, MaKH) là khóa chính ghép&#xa;TenKH chỉ phụ thuộc vào MaKH&#xa;→ Vi phạm 2NF: phụ thuộc bộ phận&#xa;DiemSo phụ thuộc đầy đủ vào (MaHV, MaKH)" id="7">
+          <mxCell parent="6" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="150" width="380" x="35" y="126" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="KHOA_HOC&#xa;────────────&#xa;🔑 MaKH (PK)&#xa;TenKH&#xa;SoTietHoc" mermaidId="n:KH2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="KHOA_HOC&#xa;────────────&#xa;🔑 MaKH (PK)&#xa;TenKH&#xa;SoTietHoc" id="8">
+          <mxCell parent="6" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="196" x="892" y="226" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="DANG_KY&lt;br&gt;────────────&lt;br&gt;&amp;nbsp;MaHV (PK, FK)&lt;br&gt;&amp;nbsp;MaKH (PK, FK)&lt;br&gt;DiemSo" mermaidId="n:DK2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="DANG_KY&#xa;────────────&#xa;🔑 MaHV (PK, FK)&#xa;🔑 MaKH (PK, FK)&#xa;DiemSo" id="9">
+          <mxCell parent="6" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="196" x="892" y="45" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Tách TenKH và SoTietHoc sang KHOA_HOC" mermaidId="e:DRAFT-&gt;KH2#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#4f81bd;strokeWidth=2;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.77;entryX=0;entryY=0.5;" mermaidBaseValue="Tách TenKH và SoTietHoc sang KHOA_HOC" id="17">
+          <mxCell edge="1" parent="6" source="7" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#4f81bd;strokeWidth=2;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.77;entryX=0;entryY=0.5;" target="8">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="654" y="292" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Giữ thuộc tính phụ thuộc đầy đủ vào khóa ghép" mermaidId="e:DRAFT-&gt;DK2#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#4f81bd;strokeWidth=2;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.23;entryX=0;entryY=0.5;" mermaidBaseValue="Giữ thuộc tính phụ thuộc đầy đủ vào khóa ghép" id="18">
+          <mxCell edge="1" parent="6" source="7" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#4f81bd;strokeWidth=2;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.23;entryX=0;entryY=0.5;" target="9">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="654" y="111" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="ERD QUẢN LÝ ĐĂNG KÝ KHÓA HỌC EDUSMART" mermaidId="n:T" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ERD QUẢN LÝ ĐĂNG KÝ KHÓA HỌC EDUSMART" id="10">
+          <mxCell parent="19" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="386" x="377" y="8" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Quan hệ N-N được chuyển thành&#xa;hai quan hệ 1-N qua thực thể trung gian DANG_KY" mermaidId="n:N" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Quan hệ N-N được chuyển thành&#xa;hai quan hệ 1-N qua thực thể trung gian DANG_KY" id="11">
+          <mxCell parent="19" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="73" width="422" x="359" y="720" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Kết quả đạt 2NF:&#xa;mỗi thuộc tính không khóa phụ thuộc đầy đủ&#xa;vào toàn bộ khóa chính của bảng." mermaidId="n:R" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Kết quả đạt 2NF:&#xa;mỗi thuộc tính không khóa phụ thuộc đầy đủ&#xa;vào toàn bộ khóa chính của bảng." id="12">
+          <mxCell parent="19" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="387" x="376" y="1270" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:T-&gt;ERD#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="13">
+          <mxCell edge="1" parent="19" source="10" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="2">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:ERD-&gt;N#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="14">
+          <mxCell edge="1" parent="19" source="2" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="11">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:N-&gt;NF#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="15">
+          <mxCell edge="1" parent="19" source="11" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="6">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:NF-&gt;R#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;curved=1;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="16">
+          <mxCell edge="1" parent="19" source="6" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="12">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
